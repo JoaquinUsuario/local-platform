@@ -1,0 +1,8 @@
+apiVersion: v2
+name: observability
+version: 1.0.0
+description: A Helm chart for Platform Observability
+dependencies:
+  - name: kube-prometheus-stack
+    version: 61.3.1
+    repository: https://prometheus-community.github.io/helm-charts

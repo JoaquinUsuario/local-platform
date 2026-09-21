@@ -1,0 +1,25 @@
+name: K8s Validation
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'apps/**'
+      - 'platform/**'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'apps/**'
+      - 'platform/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Kubeconform
+        uses: bpicode/github-action-kubeconform@v1
+        
+      - name: Validate Demo App
+        run: kubeconform -strict -summary apps/demo-app/*.yaml

@@ -1,0 +1,11 @@
+kube-prometheus-stack:
+  grafana:
+    adminPassword: prom-operator
+    ingress:
+      enabled: false
+    service:
+      type: ClusterIP
+  prometheus:
+    prometheusSpec:
+      serviceMonitorSelectorNilUsesHelmValues: false
+      podMonitorSelectorNilUsesHelmValues: false
