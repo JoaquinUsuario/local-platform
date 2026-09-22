@@ -1,7 +1,7 @@
 # Local GitOps Platform
 
-[![Terraform CI](https://github.com/YOUR_USERNAME/gitops-local-platform/actions/workflows/terraform-ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/gitops-local-platform/actions/workflows/terraform-ci.yml)
-[![K8s Validation](https://github.com/YOUR_USERNAME/gitops-local-platform/actions/workflows/k8s-validate.yml/badge.svg)](https://github.com/YOUR_USERNAME/gitops-local-platform/actions/workflows/k8s-validate.yml)
+[![Terraform CI](https://github.com/JoaquinUsuario/local-platform/actions/workflows/terraform-ci.yml/badge.svg)](https://github.com/JoaquinUsuario/local-platform/actions/workflows/terraform-ci.yml)
+[![K8s Validation](https://github.com/JoaquinUsuario/local-platform/actions/workflows/k8s-validate.yml/badge.svg)](https://github.com/JoaquinUsuario/local-platform/actions/workflows/k8s-validate.yml)
 
 A complete GitOps platform environment runnable entirely on a local machine to achieve **100% cost optimization**. This project demonstrates advanced Cloud and Platform Engineering skills by provisioning infrastructure as code (IaC) and managing the cluster state via GitOps principles.
 
