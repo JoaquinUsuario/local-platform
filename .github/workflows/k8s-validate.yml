@@ -3,14 +3,6 @@ name: K8s Validation
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - 'apps/**'
-      - 'platform/**'
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - 'apps/**'
-      - 'platform/**'
 
 jobs:
   validate:
@@ -18,8 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Kubeconform
-        uses: bpicode/github-action-kubeconform@v1
-        
+      - name: Install Kubeconform
+        run: |
+          wget https://github.com/yannh/kubeconform/releases/download/v0.6.3/kubeconform-linux-amd64.tar.gz
+          tar xf kubeconform-linux-amd64.tar.gz
+          sudo mv kubeconform /usr/local/bin/
+          
       - name: Validate Demo App
-        run: kubeconform -strict -summary -ignore-filename-pattern kustomization apps/demo-app/*.yaml
+        run: kustomize build apps/demo-app | kubeconform -strict -summary
