@@ -22,4 +22,4 @@ jobs:
         uses: bpicode/github-action-kubeconform@v1
         
       - name: Validate Demo App
-        run: kubeconform -strict -summary apps/demo-app/*.yaml
+        run: kubeconform -strict -summary -ignore-filename-pattern kustomization apps/demo-app/*.yaml
